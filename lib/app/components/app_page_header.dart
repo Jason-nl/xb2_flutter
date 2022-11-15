@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:xb2_flutter/app/components/app_page_header_actions_more.dart';
 
 class AppPageHeader extends StatelessWidget implements PreferredSizeWidget {
   const AppPageHeader({Key? key}) : super(key: key);
@@ -14,10 +15,13 @@ class AppPageHeader extends StatelessWidget implements PreferredSizeWidget {
         width: 32,
         color: Colors.white,
       ),
-      leading: IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
-      actions: [
-        IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz))
-      ],
+      leading: IconButton(
+          onPressed: () {
+            // 弹出侧边栏
+            Scaffold.of(context).openDrawer();
+          },
+          icon: const Icon(Icons.menu)),
+      actions: const [AppPageHeaderActionsMore()],
       bottom: const TabBar(tabs: [
         Tab(text: '最近'),
         Tab(text: '热门'),
