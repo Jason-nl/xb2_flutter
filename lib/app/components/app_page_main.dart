@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:xb2_flutter/app/post/create/post_create.dart';
 import 'package:xb2_flutter/app/post/index/post_index.dart';
 import 'package:xb2_flutter/app/user/profile/user_profile.dart';
+import 'package:xb2_flutter/playground/playground.dart';
 
 class AppPageMain extends StatelessWidget {
   final int currentIndex;
@@ -15,6 +16,8 @@ class AppPageMain extends StatelessWidget {
     const PostCreate(),
     // 用户
     const UserProfile(),
+    // 练习
+    const PlayGroud()
   ];
 
   @override

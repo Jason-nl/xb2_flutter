@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:xb2_flutter/app/components/app_logo.dart';
 import 'package:xb2_flutter/app/components/app_page_header_actions_more.dart';
 
 class AppPageHeader extends StatelessWidget implements PreferredSizeWidget {
@@ -10,11 +11,7 @@ class AppPageHeader extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Image.asset(
-        'assets/images/logo.png',
-        width: 32,
-        color: Colors.white,
-      ),
+      title: const AppLogo(),
       leading: IconButton(
           onPressed: () {
             // 弹出侧边栏
