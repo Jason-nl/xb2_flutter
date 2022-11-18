@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:xb2_flutter/app/components/app_floating_action_button.dart';
-import 'package:xb2_flutter/app/components/app_page_bottom.dart';
-import 'package:xb2_flutter/app/components/app_page_header.dart';
-import 'package:xb2_flutter/app/components/app_page_main.dart';
-import 'package:xb2_flutter/app/components/app_page_side.dart';
+import 'package:xb2_flutter/app/components/app_home.dart';
 import 'package:xb2_flutter/app/themes/app_theme.dart';
+import 'package:xb2_flutter/playground/routing/components/about.dart';
+import 'package:xb2_flutter/post/show/post_show.dart';
 
 class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);
@@ -14,41 +12,38 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  // 底部导航栏当前项目
-  int currentAppBottomNavigationBarItem = 0;
-
-  // 点按底部导航栏事件处理
-  bool showAppBar = true;
-
-  void onTapAppBottomNavigationBarItem(int index) {
-    setState(() {
-      currentAppBottomNavigationBarItem = index;
-      showAppBar = index == 0;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       darkTheme: AppTheme.dark,
       theme: AppTheme.light,
-      // 页面结构
-      home: DefaultTabController(
-        length: 2,
-        child: Scaffold(
-          drawer: const AppPageSide(),
-          // 顶部应用栏
-          appBar: showAppBar ? const AppPageHeader() : null,
-          backgroundColor: Colors.amber,
-          body: AppPageMain(currentIndex: currentAppBottomNavigationBarItem),
-          bottomNavigationBar: AppPageBottom(
-            currentIndex: currentAppBottomNavigationBarItem,
-            onTap: onTapAppBottomNavigationBarItem,
-          ),
-          // floatingActionButton: const AppFloatingActionButton(),
-        ),
-      ),
+      // 初始路由
+      initialRoute: '/',
+      // 命名路由
+      // routes: {
+      //   '/':(context) => const AppHome(),
+      //   '/about':(context) => const About(),
+      // },
+
+      onGenerateRoute: (settings) {
+        print(settings.arguments);
+        if (settings.name == '/') {
+          return MaterialPageRoute(builder: (context) => const AppHome());
+        }
+
+        if (settings.name == '/about') {
+          return MaterialPageRoute(builder: (context) => const About());
+        }
+
+        final uri = Uri.parse(settings.name ?? '');
+
+        if (uri.pathSegments.length == 2 && uri.pathSegments.first == 'post') {
+          print(uri.pathSegments);
+          final postId = uri.pathSegments[1];
+          return MaterialPageRoute(builder: (context) => PostShow(postId));
+        }
+      },
     );
   }
 }
