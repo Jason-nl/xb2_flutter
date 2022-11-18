@@ -92,8 +92,20 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "nested",
+      "rootUri": "file:///Users/leif/devtools/flutter/.pub-cache/hosted/pub.flutter-io.cn/nested-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "path",
       "rootUri": "file:///Users/leif/devtools/flutter/.pub-cache/hosted/pub.flutter-io.cn/path-1.8.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "provider",
+      "rootUri": "file:///Users/leif/devtools/flutter/.pub-cache/hosted/pub.flutter-io.cn/provider-6.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -152,7 +164,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2022-11-14T13:24:38.537795Z",
+  "generated": "2022-11-18T11:45:11.369872Z",
   "generator": "pub",
   "generatorVersion": "2.17.0"
 }
