@@ -45,7 +45,7 @@ class AppRouterDelegate extends RouterDelegate<AppRouteConfiguration>
   @override
   Widget build(BuildContext context) {
     return Navigator(
-      key: _navigatorKey,
+      // key: _navigatorKey,
       pages: [
         const MaterialPage(
           key: ValueKey('AppHome'),
