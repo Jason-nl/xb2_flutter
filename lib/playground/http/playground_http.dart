@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import '../../app/app_config.dart';
 import '../../user/user.dart';
 
 class PlayGroundHttp extends StatefulWidget {
@@ -15,11 +16,10 @@ class PlayGroundHttp extends StatefulWidget {
 
 class _PlayGroundHttpState extends State<PlayGroundHttp> {
   String? currentUserName;
-
   String? currentUserToken;
 
   getUser() async {
-    final uri = Uri.parse('https://nid-node.ninghao.co/users/1');
+    final uri = Uri.parse('${AppConfig.apiBaseUrl}/users/1');
     final response = await http.get(uri);
     print('状态码 ${response.statusCode}');
     print('响应主体 ${response.body}');
@@ -36,7 +36,7 @@ class _PlayGroundHttpState extends State<PlayGroundHttp> {
     const name = '李四A';
     const password = '123456';
 
-    final uri = Uri.parse('https://nid-node.ninghao.co/users');
+    final uri = Uri.parse('${AppConfig.apiBaseUrl}/users');
     final response = await http.post(uri, body: {
       'name': name,
       'password': password,
@@ -48,7 +48,7 @@ class _PlayGroundHttpState extends State<PlayGroundHttp> {
   login() async {
     const name = '李四B';
     const password = '123456';
-    final uri = Uri.parse('https://nid-node.ninghao.co/login');
+    final uri = Uri.parse('${AppConfig.apiBaseUrl}/login');
     final response = await http.post(uri, body: {
       'name': name,
       'password': password,
@@ -68,7 +68,7 @@ class _PlayGroundHttpState extends State<PlayGroundHttp> {
   updateUser() async {
     const name = '李四B';
     const password = '123456';
-    final uri = Uri.parse('https://nid-node.ninghao.co/users');
+    final uri = Uri.parse('${AppConfig.apiBaseUrl}/users');
     final headers = { 
       'Authorization': 'Bearer $currentUserToken',
       HttpHeaders.contentTypeHeader: 'application/json',
