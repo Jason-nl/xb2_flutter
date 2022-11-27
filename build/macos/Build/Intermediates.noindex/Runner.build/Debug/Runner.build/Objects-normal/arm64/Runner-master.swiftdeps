@@ -1,8 +1,8 @@
 version: "Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)"
 options: "56cd97c777ab4545291fbf0da249219ded42bc4050222bfde641c946ee360318"
-build_start_time: [1668432292, 779041051]
-build_end_time: [1668432302, 817970991]
+build_start_time: [1669531390, 791342973]
+build_end_time: [1669531397, 36057949]
 inputs:
-  "/Users/leif/workspace/project/github/xb2_flutter/macos/Flutter/GeneratedPluginRegistrant.swift": [1668432278, 649857521]
+  "/Users/leif/workspace/project/github/xb2_flutter/macos/Flutter/GeneratedPluginRegistrant.swift": [1669531374, 583615303]
   "/Users/leif/workspace/project/github/xb2_flutter/macos/Runner/AppDelegate.swift": [1668431229, 87208271]
   "/Users/leif/workspace/project/github/xb2_flutter/macos/Runner/MainFlutterWindow.swift": [1668431229, 88618040]

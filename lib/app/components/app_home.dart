@@ -34,7 +34,7 @@ class _AppHomeState extends State<AppHome> {
         drawer: const AppPageSide(),
         // 顶部应用栏
         appBar: showAppBar ? const AppPageHeader() : null,
-        backgroundColor: Colors.amber,
+        // backgroundColor: Colors.amber,
         body: AppPageMain(currentIndex: currentAppBottomNavigationBarItem),
         bottomNavigationBar: AppPageBottom(
           currentIndex: currentAppBottomNavigationBarItem,
